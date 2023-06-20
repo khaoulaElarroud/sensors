@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+  <h1 class="display-4">Drones</h1>
+  <p class="lead">Visualisation des données collectées par nos drones</p>
+</div>
+
+<div class="container">
+  <div class="d-flex flex-column">
+    <h2>Registered users</h2>
+    {% for account in accounts %}
+    <p>{{account.username}}|{{account.date_joined}} </p>
+    {%endfor%}
+
+
+  </div>
+
+</div>
+
+
+
+
+
+
+{% endblock content %}

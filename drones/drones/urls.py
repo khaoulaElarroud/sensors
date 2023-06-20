@@ -16,11 +16,29 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from authentification import views
 from django.conf import settings
 from django.conf.urls.static import static
+from personal import views
+from personal.views import home_screen
+from account. views import (
+    registration_view,
+    logout_view,
+    login_view,
+    account_view,
+    dashbord_view,
+    )
+
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('connexion/',views.connexion, name='connexion'),
-]+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+    path('personal/', views.home_screen),
+    path('',home_screen,name="home"),
+    path('register/',registration_view, name="register"),
+    path('logout/',logout_view, name="logout"),
+    path('login/',login_view, name="login"),
+    path('account/',account_view, name="account"),
+    path('dashboard/',dashbord_view, name="dashboard"),
+
+] 
+
